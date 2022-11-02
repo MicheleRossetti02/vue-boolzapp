@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+p{
+    margin: 0;
+}
 .green{
     background-color: #009688;
     height: 20vh;
@@ -27,13 +31,85 @@
 .display{
 height: 100%;
 }
+/* #region left bar  */
 .left.display{
-    width: calc(100%/12 * 3.5);
+    width: calc(100%/12 * 4);
     background-color: #EAEAEA;
 
 }
+.info{
+color: #B1B1B1;
+}
 .right.display{
-    width: calc(100%/12 * 7.5);
-
+width: calc(100%/12 * 8);
 background-color: black;
 }
+/* #region profile  */
+
+
+header.profile{
+    justify-content: space-between;
+}
+.image_profile.io{
+    border-radius: 50%;
+    width: 45px;
+}
+/* #endregion profile */
+
+/* #region notifiche */
+.notifiche{
+    background-color: #8EDAFC;
+
+}
+.bell{
+    /* width: 25px; */
+    color: #8EDAFC;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    padding: 13px;
+}
+.ricevi_notifiche{
+    font-size: 15px;
+}
+.attiva_notifiche{
+    color: #4F7485;
+    font-size: 14px;
+    text-decoration-line: underline;
+    margin: 0;
+}
+/* #endregion notifiche */
+
+/* #region search */
+.search{
+    background-color: #FFFFFF;
+    color: #B1B1B1;
+
+}
+.bar{
+    width: 100%;
+    border: 0;
+
+}
+/* #endregion search */
+
+/* #region chat */
+.chat{
+    justify-content: space-between;
+    
+}
+.profile.chat{
+    width: 50px;
+    border-radius: 50%;
+}
+.info_text_chat{
+color: #C8BEBB;
+font-size: 12px;
+}
+.hours{
+    font-size: 10px;
+    color: #C8BEBB;
+}
+/* #endregion chat */
+
+/* #endregion left bar */
