@@ -42,13 +42,14 @@ color: #B1B1B1;
 }
 .right.display{
 width: calc(100%/12 * 8);
-background-color: black;
+
 }
 /* #region profile  */
 
 
 header.profile{
     justify-content: space-between;
+    /* border-right: 1px solid grey; */
 }
 .image_profile.io{
     border-radius: 50%;
@@ -120,3 +121,43 @@ font-size: 12px;
 /* #endregion chat */
 
 /* #endregion left bar */
+
+/* #region right bar */
+
+.right.display{
+        background-color: #EAEAEA;
+
+}
+
+.accesso{
+    font-size: 11px;
+}
+.image_profile.chat{
+    justify-content: space-between;
+}
+.chat.text{
+flex-direction: column;
+background-image: url("./assets/img/mine.jpg");
+background-size: cover;
+
+/* width: 100%;
+height: calc(650px - 66px); */
+}
+.message.io{
+    /* align-items: end; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    width: 100%;
+
+
+}
+.messaggio_mandato.io{
+    background-color: #D5F9BA;
+    width: 300px;
+
+}
+.hours_message{
+    font-size: 11px;
+}
+/* #endregion right bar */
