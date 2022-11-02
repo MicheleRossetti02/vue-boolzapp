@@ -36,6 +36,7 @@ height: 100%;
     width: calc(100%/12 * 4);
     background-color: #EAEAEA;
 
+
 }
 .info{
 color: #B1B1B1;
@@ -49,6 +50,8 @@ width: calc(100%/12 * 8);
 
 header.profile{
     justify-content: space-between;
+    height: 66px;
+
     /* border-right: 1px solid grey; */
 }
 .image_profile.io{
@@ -99,7 +102,7 @@ header.profile{
 
 background-color: #FFFFFF;
 overflow-y: auto;
-height: 480px;
+height: 474px;
 
 
 }
@@ -135,10 +138,15 @@ font-size: 12px;
 .image_profile.chat{
     justify-content: space-between;
 }
-.chat.text{
-flex-direction: column;
+main.chat{
+background-color: #4F7485;
+height: calc(100% - 118px);
 background-image: url("./assets/img/mine.jpg");
 background-size: cover;
+
+}
+.chat.text{
+flex-direction: column;
 
 /* width: 100%;
 height: calc(650px - 66px); */
@@ -152,12 +160,39 @@ height: calc(650px - 66px); */
 
 
 }
-.messaggio_mandato.io{
-    background-color: #D5F9BA;
+.messaggio{
     width: 300px;
+border-radius: 10px;
+}
+.messaggio.ricevuto{
+    background-color: white;
+}
+.messaggio.io{
+    background-color: #D5F9BA;
 
 }
 .hours_message{
     font-size: 11px;
 }
+
+
+
+.down_bar{
+    justify-content: space-between;
+}
+.emoticon{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #6B7376;
+}
+input.bar{
+    width: 100%;
+    border-radius: 10px;
+}
+.vocale{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #6B7376;  
+}
+
 /* #endregion right bar */
