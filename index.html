@@ -24,7 +24,50 @@
 
 <div class="app" id="app">
     <div class="left display">
+        <header class=" profile d-flex align-items-center p-2">
+            <div class="profile d-flex align-items-center">
+                <img src="./assets/img/avatar_io.jpg" class=" image_profile io" alt="">
+                <p class="m-0 ps-2">Sofia</p>
+            </div>
+            <div class="info me-1">
+                <i class="fa-solid fa-circle-notch p-2"></i>
+                <i class="fa-solid fa-message p-2"></i>
+                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+            </div>
 
+        </header>
+        <main class="">
+            <div class="notifiche p-2 d-flex align-items-center">
+                <i class="fa-solid fa-bell-slash bell m-1 "></i>
+                <div class="info_notifiche">
+                    <span class="ricevi_notifiche">Ricevi notifiche di nuovi messaggi</span>
+                    <p class="attiva_notifiche">Attiva notifiche desktop</p>
+                </div>
+            </div>
+            <div class="search d-flex align-items-center p-2">
+                <i class="fa-solid fa-magnifying-glass  mx-3"></i>
+                <input type="text" class="bar" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat">
+            </div>
+            
+            <div class="lista_chat">
+                <div class="chat d-flex py-2 mx-3 align-items-center" v-for="(contact, index) in contacts" @click="setActiveIndex(index)">
+                    <div class="img_profile me-2 d-flex">
+                        <img :src="contact.avatar" class="profile chat" alt="">
+                        <div class="info_profile ms-3">
+                            <span>{{contact.name}}</span>
+                            <p class="info_text_chat">Ultimo messaggio inviato</p>
+            
+                        </div>
+
+                    </div>
+                    <div class="hours">
+                        <span>12:00</span>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </main>
     </div>
     <div class="right display">
 

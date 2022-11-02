@@ -94,9 +94,16 @@ header.profile{
 /* #endregion search */
 
 /* #region chat */
+.lista_chat{
+
+background-color: #FFFFFF;
+overflow-y: auto;
+height: 480px;
+
+
+}
 .chat{
     justify-content: space-between;
-    
 }
 .profile.chat{
     width: 50px;
