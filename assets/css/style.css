@@ -17,9 +17,23 @@
 }
 .app{
     position: relative;
+    display: flex;
     margin:0 auto ;
-    width: calc(100% /12 * 10);
     height: 650px;
-    background-color: blueviolet;
+    width: calc(100% /12 * 10);
+
     translate: 0% 10%;
+}
+.display{
+height: 100%;
+}
+.left.display{
+    width: calc(100%/12 * 3.5);
+    background-color: #EAEAEA;
+
+}
+.right.display{
+    width: calc(100%/12 * 7.5);
+
+background-color: black;
 }
