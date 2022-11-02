@@ -1,0 +1,25 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+.green{
+    background-color: #009688;
+    height: 20vh;
+}
+.grey{
+    background-color: #D8DBD6;
+    height: 80vh;
+}
+.background{
+    position: absolute;
+    width: 100%;
+}
+.app{
+    position: relative;
+    margin:0 auto ;
+    width: calc(100% /12 * 10);
+    height: 650px;
+    background-color: blueviolet;
+    translate: 0% 10%;
+}
