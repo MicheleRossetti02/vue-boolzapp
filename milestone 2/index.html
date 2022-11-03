@@ -50,7 +50,11 @@
             </div>
 
             <div class="lista_chat">
-                <div class="chat d-flex py-2 mx-3 align-items-center" v-for="(contact, index) in contacts" @click="setActiveIndex(index)">
+                <div class="chat d-flex py-2 px-3 align-items-center" 
+                v-for="(contact, index) in contacts" 
+                @click="setActiveIndex(index)"
+                v-bind:class="activeIndex === index ? 'active' : 'not_active' "
+                >
                     <div class="img_profile me-2 d-flex">
                         <img :src="`./assets/img/avatar${contact.avatar}`" class="profile chat" alt="">
                         <div class="info_profile ms-3">
@@ -75,10 +79,10 @@
 
             <div class="img_profile chat me-2 d-flex align-items-center">
                 <div class="profile d-flex align-items-center">
-                    <!-- <img :src="contact[0].avatar" class="profile chat" alt=""> -->
-                    <img :src="`./assets/img/avatar${contacts[0].avatar}`" alt="" class="profile chat m-2">
+                    <!-- <img :src="contact[activeIndex].avatar" class="profile chat" alt=""> -->
+                    <img :src="`./assets/img/avatar${contacts[activeIndex].avatar}`" alt="" class="profile chat m-2">
                     <div class="info_profile ms-3  ">
-                        <span class="text-black">{{contacts[0].name}}</span>
+                        <span class="text-black">{{contacts[activeIndex].name}}</span>
                         <p class="accesso">Ultimo accesso oggi alle 12:00</p>
                     </div>
                 </div>
@@ -92,7 +96,8 @@
         </header>
         <main class="chat_display d-flex"  >
 
-              <div class="col-auto my-1 mx-2"  v-for="(messageInfo) in contacts[0].messages" v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
+              <div class="col-auto my-1 mx-2"  v-for="(messageInfo) in contacts[activeIndex].messages" 
+              v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
                 <div class="markup_message p-2 " >
                     <div class="testo_principale text-black">
                         <p>{{messageInfo.message}}</p>
@@ -113,7 +118,7 @@
 
 
 
-            <!-- <div class="d-flex messaggio " v-for="(messageInfo) in contacts[0].messages" 
+            <!-- <div class="d-flex messaggio " v-for="(messageInfo) in contacts[activeIndex].messages" 
             v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
 
 
