@@ -170,29 +170,31 @@ createApp({
 
             error : false,
 
-            newMessage:[{
-                message : '',
-                status: 'sent',
-           } ],
+            newMessage:''
         }
     },
     methods:{
         setActiveIndex(index){
             this.activeIndex= index
         },
-        addMessage(activeIndex, ){
+        addMessage(activeIndex ){
             console.log('ho cliccato enter');
             i=0
-            if (this.newMessage[i].message.length = 0) {
+            if (this.newMessage.length == 0) {
                 // this.error = true
                 console.log('sono nel posto sbagliato');
 
             } else {
                 // this.newMessage.push(newMessage.message)
-                 this.contacts[activeIndex].messages.push(this.newMessage[i])
+                const messaggio = {
+                    message : this.newMessage,
+                    status: 'sent',
+                }
+
+                 this.contacts[activeIndex].messages.push(messaggio)
                 console.log('sono qui');
             }
-            // this.newMessage.message = ''
+            this.newMessage = ''
 
             // this.contacts[activeIndex].messages.push(newMessage)
 

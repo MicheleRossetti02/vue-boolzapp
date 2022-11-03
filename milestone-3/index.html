@@ -164,8 +164,8 @@
                 <div class="input_write_text col-10 p-0 d-flex align-items-center">
                     <input type="text" class="bar py-1 px-2" placeholder="Scrivi un messaggio"
                  
-                    v-model="newMessage[0].message"
-                    @keyup.enter="addMessage(activeIndex, message)"
+                    v-model="newMessage"
+                    @keyup.enter="addMessage(activeIndex)"
                     >
                     <!-- v-for="message in newMessage"  -->
                 </div>
