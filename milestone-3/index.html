@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Document</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer'>
+<link rel='stylesheet' href='./assets/css/style.css'>
+</head>
+<body>
+
+    
+<div class="background">
+    <div class="green">
+
+    </div>
+    <div class="grey">
+    
+    </div>
+</div>
+
+
+<div class="app" id="app">
+    <div class="left display">
+        <header class=" profile d-flex align-items-center p-2">
+            <div class="profile d-flex align-items-center">
+                <img src="./assets/img/avatar_io.jpg" class=" image_profile io" alt="">
+                <p class="m-0 ps-2">Sofia</p>
+            </div>
+            <div class="info me-1">
+                <i class="fa-solid fa-circle-notch p-2"></i>
+                <i class="fa-solid fa-message p-2"></i>
+                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+            </div>
+
+        </header>
+        <main class="">
+            <div class="notifiche p-2 d-flex align-items-center">
+                <i class="fa-solid fa-bell-slash bell m-1 "></i>
+                <div class="info_notifiche">
+                    <span class="ricevi_notifiche">Ricevi notifiche di nuovi messaggi</span>
+                    <p class="attiva_notifiche">Attiva notifiche desktop</p>
+                </div>
+            </div>
+            <div class="search d-flex align-items-center p-2">
+                <i class="fa-solid fa-magnifying-glass  mx-3"></i>
+                <input type="text" class="bar" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat">
+            </div>
+
+            <div class="lista_chat">
+                <div class="chat d-flex py-2 px-3 align-items-center" 
+                v-for="(contact, index) in contacts" 
+                @click="setActiveIndex(index)"
+                v-bind:class="activeIndex === index ? 'active' : 'not_active' "
+                >
+                    <div class="img_profile me-2 d-flex">
+                        <img :src="`./assets/img/avatar${contact.avatar}`" class="profile chat" alt="">
+                        <div class="info_profile ms-3">
+                            <span>{{contact.name}}</span>
+                            <p class="info_text_chat">Ultimo messaggio inviato</p>
+            
+                        </div>
+
+                    </div>
+                    <div class="hours">
+                        <span>12:00</span>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="right display ">
+        <header class="info">
+
+            <div class="img_profile chat me-2 d-flex align-items-center">
+                <div class="profile d-flex align-items-center">
+                    <!-- <img :src="contact[activeIndex].avatar" class="profile chat" alt=""> -->
+                    <img :src="`./assets/img/avatar${contacts[activeIndex].avatar}`" alt="" class="profile chat m-2">
+                    <div class="info_profile ms-3  ">
+                        <span class="text-black">{{contacts[activeIndex].name}}</span>
+                        <p class="accesso">Ultimo accesso oggi alle 12:00</p>
+                    </div>
+                </div>
+                 <div class="info chat me-1">
+                    <i class="fa-solid fa-magnifying-glass  p-2"></i>
+                    <i class="fa-solid fa-paperclip p-2"></i>
+                   <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+                  </div>
+            </div>
+            
+        </header>
+        <main class="chat_display d-flex"  >
+
+              <div class="col-auto my-1 mx-2"  v-for="(messageInfo) in contacts[activeIndex].messages" 
+              v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
+                <div class="markup_message p-2 " >
+                    <div class="testo_principale text-black">
+                        <p>{{messageInfo.message}}</p>
+                    </div>
+
+                    <div class="hours_message text-end">
+                        15:30
+                    </div>
+
+                </div>
+              </div>
+
+
+
+          
+
+
+
+
+
+
+            <!-- <div class="d-flex messaggio " v-for="(messageInfo) in contacts[activeIndex].messages" 
+            v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
+
+
+                    </div> -->
+
+
+      
+
+                <!-- <div class="message io  "> 
+                    <div class="messaggio io px-3 py-1 mb-2 me-3">
+                        <div class="testo_principale text-black">
+                            <p>Ricordati di stendere i panni</p>
+                        </div>
+                        <div class="hours_message text-end">
+                            15:50
+                        </div>
+                    </div>
+
+                </div> -->
+
+<!--                 
+                <div class="message ricevuto">
+                    <div class="messaggio ricevuto px-3 py-1 mb-2 ms-3">
+                        <div class="testo_principale text-black">
+                            <p>Tutto fatto</p>
+                        </div>
+                        <div class="hours_message text-end">
+                            15:50
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+            
+        </main>
+        <footer>
+            <div class="down_bar row d-flex p-2 m-0">
+                <div class="emoticon col-1 p-0 ">
+                    <i class="fa-regular fa-face-smile mx-2 mxy-2"></i>
+                </div>
+
+                <div class="input_write_text col-10 p-0 d-flex align-items-center">
+                    <input type="text" class="bar py-1 px-2" placeholder="Scrivi un messaggio"
+                 
+                    v-model="newMessage[0].message"
+                    @keyup.enter="addMessage(activeIndex, message)"
+                    >
+                    <!-- v-for="message in newMessage"  -->
+                </div>
+
+                <div class="vocale col-1 p-0">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js'></script>
+<script src='./assets/js/main.js'></script>
+</body>
+</html>
