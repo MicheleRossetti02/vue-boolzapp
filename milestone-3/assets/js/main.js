@@ -190,8 +190,14 @@ createApp({
                     message : this.newMessage,
                     status: 'sent',
                 }
+                const risposta ={
+                    message: 'ok!',
+                    status: 'received'
+                }
 
                  this.contacts[activeIndex].messages.push(messaggio)
+                 this.contacts[activeIndex].messages.push(risposta)
+
                 console.log('sono qui');
             }
             this.newMessage = ''
