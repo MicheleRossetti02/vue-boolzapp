@@ -190,42 +190,21 @@ createApp({
                     message : this.newMessage,
                     status: 'sent',
                 }
-                this.contacts[activeIndex].messages.push(messaggio)
-                console.log('sono qui');
-
-
-                const risposta = {
+                const risposta ={
                     message: 'ok!',
                     status: 'received'
                 }
-                this.contacts[activeIndex].messages.push(risposta)  
 
-                setTimeout(myfunction,1000)
-                function myfunction(){
+                 this.contacts[activeIndex].messages.push(messaggio)
+                 this.contacts[activeIndex].messages.push(risposta)
 
-                // const risposta = {
-                //     message: 'ok!',
-                //     status: 'received'
-                // }
-
-                    // this.contacts[activeIndex].messages.push(risposta)  
-                }
-
+                console.log('sono qui');
             }
-
             this.newMessage = ''
-
-
-
 
             // this.contacts[activeIndex].messages.push(newMessage)
 
-        },
-
-
-           
-
-
+        }
 
     }
 }) .mount ('#app')
