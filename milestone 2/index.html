@@ -70,15 +70,15 @@
         </main>
     </div>
 
-    <div class="right display">
+    <div class="right display ">
         <header class="info">
 
             <div class="img_profile chat me-2 d-flex align-items-center">
                 <div class="profile d-flex align-items-center">
                     <!-- <img :src="contact[0].avatar" class="profile chat" alt=""> -->
-                    <img src="./assets/img/avatar_1.jpg" alt="" class="profile chat m-2">
+                    <img :src="`./assets/img/avatar${contacts[0].avatar}`" alt="" class="profile chat m-2">
                     <div class="info_profile ms-3  ">
-                        <span class="text-black">Michele</span>
+                        <span class="text-black">{{contacts[0].name}}</span>
                         <p class="accesso">Ultimo accesso oggi alle 12:00</p>
                     </div>
                 </div>
@@ -91,20 +91,36 @@
             
         </header>
         <main class="chat">
+        <div class="  container text-center">
+            <div class="row "  v-for="(messageInfo) in contacts[0].messages" >
+              <div class="col-auto align-self-end"  v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
+                <div class="testo_principale text-black">
+                    <p>{{messageInfo.message}}</p>
+                </div>
+                <div class="hours_message text-end">
+                    15:30
+                </div>
+              </div>
 
-            <div class="chat text d-flex">
-                <div class="message io  "> 
-                    <div class="messaggio io px-3 py-1 mt-2 mb-2 me-3">
-                        <div class="testo_principale text-black">
-                            <p>Hai portato a spasso il cane</p>
-                        </div>
-                        <div class="hours_message text-end">
-                            15:30
-                        </div>
-                    </div>
+            </div>
+          </div>
+          
 
-                </div>               
-                <div class="message io  "> 
+
+
+
+
+
+            <!-- <div class="d-flex messaggio " v-for="(messageInfo) in contacts[0].messages" 
+            v-bind:class="messageInfo.status === 'sent'? 'messaggio io  ' : 'messaggio ricevuto ' ">
+
+
+                    </div> -->
+
+
+      
+
+                <!-- <div class="message io  "> 
                     <div class="messaggio io px-3 py-1 mb-2 me-3">
                         <div class="testo_principale text-black">
                             <p>Ricordati di stendere i panni</p>
@@ -114,13 +130,13 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
-                
+<!--                 
                 <div class="message ricevuto">
                     <div class="messaggio ricevuto px-3 py-1 mb-2 ms-3">
                         <div class="testo_principale text-black">
-                            <p>Ricordati di stendere i panni</p>
+                            <p>Tutto fatto</p>
                         </div>
                         <div class="hours_message text-end">
                             15:50
@@ -128,7 +144,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
             
         </main>
         <footer>

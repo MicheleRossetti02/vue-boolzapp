@@ -152,30 +152,30 @@ overflow-y: auto;
 
 
 }
-.chat.text{
-flex-direction: column;
 
-/* width: 100%;
-height: calc(650px - 66px); */
-}
-.message.io{
-    /* align-items: end; */
+/* .message.io{
+    align-items: end; 
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
-    width: 100%;
+     width: 100%; 
 
 
-}
+} */
 .messaggio{
-    width: 300px;
+/* max-width: max-content; */
 border-radius: 10px;
+
+
 }
 .messaggio.ricevuto{
     background-color: white;
 }
 .messaggio.io{
     background-color: #D5F9BA;
+
+
+
 
 }
 .hours_message{
