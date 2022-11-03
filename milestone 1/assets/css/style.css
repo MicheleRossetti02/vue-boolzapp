@@ -31,6 +31,7 @@ p{
 .display{
 height: 100%;
 }
+
 /* #region left bar  */
 .left.display{
     width: calc(100%/12 * 4);
@@ -126,7 +127,9 @@ font-size: 12px;
 /* #endregion left bar */
 
 /* #region right bar */
-
+header.info{
+    border-left: 1px solid gray;
+}
 .right.display{
         background-color: #EAEAEA;
 
@@ -138,11 +141,15 @@ font-size: 12px;
 .image_profile.chat{
     justify-content: space-between;
 }
+
+/* #region chat */
 main.chat{
 background-color: #4F7485;
 height: calc(100% - 118px);
-background-image: url("./assets/img/mine.jpg");
-background-size: cover;
+ background-image: url(../img/mine.jpg);
+background-size:contain;
+overflow-y: auto;
+
 
 }
 .chat.text{
@@ -174,9 +181,10 @@ border-radius: 10px;
 .hours_message{
     font-size: 11px;
 }
+/* #endregion chat */
 
 
-
+/* #region down bar */
 .down_bar{
     justify-content: space-between;
 }
@@ -194,5 +202,7 @@ input.bar{
     font-size: 1.5rem;
     color: #6B7376;  
 }
+
+/* #endregion down bar */
 
 /* #endregion right bar */
