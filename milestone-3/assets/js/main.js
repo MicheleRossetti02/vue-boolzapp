@@ -194,22 +194,21 @@ createApp({
                 console.log('sono qui');
 
 
-                const risposta = {
-                    message: 'ok!',
-                    status: 'received'
-                }
-                this.contacts[activeIndex].messages.push(risposta)  
-
-                setTimeout(myfunction,1000)
-                function myfunction(){
-
                 // const risposta = {
                 //     message: 'ok!',
                 //     status: 'received'
                 // }
+                // this.contacts[activeIndex].messages.push(risposta)  
 
-                    // this.contacts[activeIndex].messages.push(risposta)  
-                }
+           
+                setTimeout(() => { 
+                    const risposta = {
+                        message: 'ok!',
+                        status: 'received'
+                    }
+    
+                        this.contacts[activeIndex].messages.push(risposta)
+                }, 1000);
 
             }
 
