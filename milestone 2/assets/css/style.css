@@ -143,13 +143,13 @@ header.info{
 }
 
 /* #region chat */
-main.chat{
+main.chat_display{
 background-color: #4F7485;
 height: calc(100% - 118px);
  background-image: url(../img/mine.jpg);
 background-size:contain;
 overflow-y: auto;
-
+flex-direction: column;
 
 }
 
@@ -170,10 +170,11 @@ border-radius: 10px;
 }
 .messaggio.ricevuto{
     background-color: white;
+    align-self: flex-start
 }
 .messaggio.io{
     background-color: #D5F9BA;
-
+align-self: flex-end;
 
 
 
