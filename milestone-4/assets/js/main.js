@@ -170,7 +170,9 @@ createApp({
 
             error : false,
 
-            newMessage:''
+            newMessage:'',
+            search: ""
+
         }
     },
     methods:{
@@ -220,7 +222,14 @@ createApp({
             // this.contacts[activeIndex].messages.push(newMessage)
 
         },
-         searchBar() {
+        searchBar() {
+            // return contact.filter((contact) =>
+            //   contact.name.toLowerCase().includes(input.value.toLowerCase())
+            // );
+
+          },
+
+
             // let input, filter,span, i, txtValue;
             // input = document.getElementById("search_bar");
             // span = document.getElementById("name")
@@ -246,12 +255,16 @@ createApp({
             //         x[i].style.display="lista_chat";                 
             //     }
             // }
-
-
-        },
-
-
-
-
-    }
+    },
+    computed: {
+        filteredcontacts() {
+          return this.contacts.filter(c => {
+            // return true if the product should be visible
+    
+            // in this example we just check if the search string
+            // is a substring of the product name (case insensitive)
+            return c.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+          });
+        }
+      }
 }) .mount ('#app')

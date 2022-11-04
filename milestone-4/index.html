@@ -49,15 +49,19 @@
                 <input type="text" id="searchbar" class="  bar px-2 py-1" 
                 placeholder="Cerca o inizia una nuova chat" 
                 aria-label="Cerca o inizia una nuova chat"
-                onkeyup="searchBar()"
+                v-model="search"
+             
+
                 >
             </div>
 
             <div class="lista_chat">
-                <div class="chat d-flex py-2 px-3 align-items-center" 
-                v-for="(contact, index) in contacts" 
+                <div class="chat item d-flex py-2 px-3 align-items-center" 
+                v-for="(contact, index) in filteredcontacts" 
                 @click="setActiveIndex(index)"
                 v-bind:class="activeIndex === index ? 'active' : 'not_active' "
+
+
                 >
                     <div class="img_profile me-2 d-flex">
                         <img :src="`./assets/img/avatar${contact.avatar}`" class="profile chat" alt="">
@@ -74,6 +78,7 @@
 
                     
                 </div>
+                
             </div>
         </main>
     </div>
