@@ -46,7 +46,11 @@
             </div>
             <div class="search d-flex align-items-center p-2">
                 <i class="fa-solid fa-magnifying-glass  mx-3"></i>
-                <input type="text" class="bar" placeholder="Cerca o inizia una nuova chat" aria-label="Cerca o inizia una nuova chat">
+                <input type="text" id="searchbar" class="  bar px-2 py-1" 
+                placeholder="Cerca o inizia una nuova chat" 
+                aria-label="Cerca o inizia una nuova chat"
+                onkeyup="searchBar()"
+                >
             </div>
 
             <div class="lista_chat">
@@ -58,7 +62,7 @@
                     <div class="img_profile me-2 d-flex">
                         <img :src="`./assets/img/avatar${contact.avatar}`" class="profile chat" alt="">
                         <div class="info_profile ms-3">
-                            <span>{{contact.name}}</span>
+                            <span class="contact_name">{{contact.name}}</span>
                             <p class="info_text_chat">Ultimo messaggio inviato</p>
             
                         </div>
@@ -165,7 +169,7 @@
                     <input type="text" class="bar py-1 px-2" placeholder="Scrivi un messaggio"
                  
                     v-model="newMessage"
-                    @keyup.enter="addMessage(activeIndex)"
+                    @keyup.enter="addMessage(activeIndex) "
                     >
                     <!-- v-for="message in newMessage"  -->
                 </div>
